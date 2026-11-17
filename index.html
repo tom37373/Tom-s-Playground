@@ -7,8 +7,7 @@
     <h2 id="third-title"></h2>
     <script>
         var size = 0
-        let elem = document.getElementById('third-title');
-        elem.textContent = '|' + size*'-' + '|'
+        document.getElementById('third-title').textContent = "|" + "-".repeat(size) + "|"
         size += 1
         await pause(100);
     </script>
