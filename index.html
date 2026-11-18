@@ -7,7 +7,9 @@
     <h2 id="third-title"></h2>
     <script>
         var size = 0
-        document.getElementById('third-title').textContent = "|" + "-".repeat(size) + "|"
+        span = document.getElementById("third-title");
+        txt = document.createTextNode("|" + "-".repeat(size) + "|");
+        span.appendChild(txt);
         size += 1
         await pause(100);
     </script>
