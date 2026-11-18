@@ -6,12 +6,11 @@
     <h2 id="second-title">I LOVE YOU THIS MUCH</h2>
     <h2 id="third-title"></h2>
     <script>
+        var size = 0;
         setInterval(function() {
-            span = document.getElementById("third-title");
-            txt = document.createTextNode("=");
-            span.appendChild(txt);
+             document.getElementById("third-title").textContent = "x".repeat(size);
+            size += 1
         }, 100)
-            
     </script>
   </body>
 </html>
