@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head><title>Tom's Playground</title></head>
+  <head>
+    <title>Tom's Playground</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
   <body>
-    <h1 id="title">HIIIIII BABE!!!! </h1>
-    <h2 id="second-title">I LOVE YOU THIS MUCH</h2>
-    <h2 id="third-title"></h2>
-    <script>
-        var size = 0;
-        setInterval(function() {
-             document.getElementById("third-title").textContent = "x".repeat(size);
-            size += 1
-        }, 100)
-    </script>
+    <div contenteditable class="board">
+	  <h3 id="board-title">Click to edit</h3>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
+    <h1></h1>
+
+    <h1 id="title"></h1>
+    <script type="module" src="initial.js" async></script>
+
   </body>
 </html>
