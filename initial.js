@@ -46,7 +46,7 @@ setInterval(async function() {
         elemt: "h3", "line number": "1", page: elem.textContent});
     }
 
-}, 1000)
+}, 10000)
 
 async function getItem(field) {
   const docRefText = doc(db, "notes", field);
