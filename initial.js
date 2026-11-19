@@ -29,8 +29,9 @@ if (!docSnapText.exists()) {
     await setDoc(doc(notesRef, "board-text-0"), {
         elemt: "p", "line number": "2", page: "Insert Text"});
 }
-
-document.getElementById("board-title").textContent = await getDoc(doc(db, "notes", "board-title")).data;
+data
+//document.getElementById("board-title").textContent = await getDoc(doc(db, "notes", "board-title")).;
+console.log(await getDoc(doc(db, "notes", "board-title")));
 const allParas = document.getElementsByTagName("p")
 
 
