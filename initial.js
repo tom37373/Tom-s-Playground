@@ -14,8 +14,6 @@ const db = getFirestore(app);
 
 const notesRef = collection(db, "notes");
 
-
-
 if (!(await getItem("board-title")).exists()) {
     await setDoc(doc(notesRef, "board-title"), {
         elemt: "h3", "line number": "1", page: "Title"});
@@ -31,19 +29,21 @@ document.getElementById("board-title").textContent = (await getItem("board-title
 const allParas = document.getElementsByTagName("p")
 
 var i = 0;
-while (localStorage.getItem("board-text-" + i)) {
+while ((await getItem("board-text-" + i)).exists()) {
     let elem = allParas[i]
-    elem.textContent = localStorage.getItem("board-text-" + i);
+    elem.textContent = (await getItem("board-text-" + i)).data().page;
     i++;
 }
 
-setInterval(function() {
-    localStorage.setItem("board-title", document.getElementById("board-title").textContent);
-    
+setInterval(async function() {
+    await setDoc(doc(notesRef, "board-title"), {
+        elemt: "h3", "line number": "1", page: document.getElementById("board-title").textContent});
+
     const allParas = document.getElementsByTagName("p")
     for (let i = 0; i < allParas.length; i++) {
         let elem = allParas[i]
-        localStorage.setItem("board-text-" + i, elem.textContent);
+        await setDoc(doc(notesRef, "board-text-" + i), {
+        elemt: "h3", "line number": "1", page: elem.textContent});
     }
 
 }, 1000)
