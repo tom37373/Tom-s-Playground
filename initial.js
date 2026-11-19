@@ -14,27 +14,21 @@ const db = getFirestore(app);
 
 const notesRef = collection(db, "notes");
 
-const docRefTitle = doc(db, "notes", "board-title");
-const docSnapTitle = await getDoc(docRefTitle);
 
-if (!docSnapTitle.exists()) {
+
+if (!getItem("board-title").exists()) {
     await setDoc(doc(notesRef, "board-title"), {
         elemt: "h3", "line number": "1", page: "Title"});
 }
 
-const docRefText = doc(db, "notes", "board-text-0");
-const docSnapText = await getDoc(docRefText);
-
-if (!docSnapText.exists()) {
+if (!getItem("board-text-0").exists()) {
     await setDoc(doc(notesRef, "board-text-0"), {
         elemt: "p", "line number": "2", page: "Insert Text"});
 }
-const docSnap = await getDoc(doc(db, "notes", "board-title"));
-document.getElementById("board-title").textContent = docSnap.data().page;
-console.log(docSnap.data().page);
+
+document.getElementById("board-title").textContent = getItem("board-title").data().page;
+
 const allParas = document.getElementsByTagName("p")
-
-
 
 var i = 0;
 while (localStorage.getItem("board-text-" + i)) {
@@ -54,3 +48,8 @@ setInterval(function() {
 
 }, 1000)
 
+async function getItem(field) {
+  const docRefText = doc(db, "notes", field);
+  const docSnapText = await getDoc(docRefText);
+  return docSnapText;
+}
