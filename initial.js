@@ -43,8 +43,10 @@ setInterval(async function() {
     const allParas = document.getElementsByTagName("p")
     for (let i = 0; i < allParas.length; i++) {
         let elem = allParas[i].textContent
-        await setDoc(doc(notesRef, "board-text-" + i), {
-        elemt: "h3", "line number": "1", page: elem});
+        if (elem) {
+            await setDoc(doc(notesRef, "board-text-" + i), {
+            elemt: "h3", "line number": "1", page: elem});
+        }
     }
 
 }, 10000)
