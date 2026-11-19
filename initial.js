@@ -16,17 +16,17 @@ const notesRef = collection(db, "notes");
 
 
 
-if (!getItem("board-title").exists()) {
+if (!(await getItem("board-title")).exists()) {
     await setDoc(doc(notesRef, "board-title"), {
         elemt: "h3", "line number": "1", page: "Title"});
 }
 
-if (!getItem("board-text-0").exists()) {
+if (!(await getItem("board-text-0")).exists()) {
     await setDoc(doc(notesRef, "board-text-0"), {
         elemt: "p", "line number": "2", page: "Insert Text"});
 }
 
-document.getElementById("board-title").textContent = getItem("board-title").data().page;
+document.getElementById("board-title").textContent = (await getItem("board-title")).data().page;
 
 const allParas = document.getElementsByTagName("p")
 
