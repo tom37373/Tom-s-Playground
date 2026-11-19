@@ -31,7 +31,8 @@ if (!docSnapText.exists()) {
 }
 data
 //document.getElementById("board-title").textContent = await getDoc(doc(db, "notes", "board-title")).;
-console.log(await getDoc(doc(db, "notes", "board-title")));
+const docSnap = await getDoc(doc(db, "notes", "board-title"));
+console.log(docSnap);
 const allParas = document.getElementsByTagName("p")
 
 
