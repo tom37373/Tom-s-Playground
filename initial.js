@@ -30,8 +30,8 @@ if (!docSnapText.exists()) {
         elemt: "p", "line number": "2", page: "Insert Text"});
 }
 const docSnap = await getDoc(doc(db, "notes", "board-title"));
-document.getElementById("board-title").textContent = docSnap.data().getItem("page");
-console.log(docSnap.data().getItem("page"));
+document.getElementById("board-title").textContent = docSnap.data().page;
+console.log(docSnap.data().page);
 const allParas = document.getElementsByTagName("p")
 
 
