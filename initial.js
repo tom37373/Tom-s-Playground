@@ -30,6 +30,7 @@ const allParas = document.getElementsByTagName("p")
 
 var i = 0;
 while ((await getItem("board-text-" + i)).exists()) {
+    console.log((await getItem("board-text-" + i)).data());
     let elem = allParas[i]
     elem.textContent = (await getItem("board-text-" + i)).data().page;
     i++;
