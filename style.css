@@ -71,6 +71,76 @@ inset 0 0 5px #000;
 
 body {
 	background: #555;
+    image-rendering: pixelated;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap');
+
+
+#coffee {
+    width: 300px;
+    height: 300px;
+    background-image: url("CoffeeMakerPixelArt1.png");
+    background-position: 0 0;
+    background-size: 300px 300px;
+    animation-name: move;
+    animation-duration: 5s;
+    animation-timing-function: step-start;
+    animation-iteration-count:infinite;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes move {
+    0% {background-image: url("CoffeeMakerPixelArt1.png");}
+    2% {background-image: url("CoffeeMakerPixelArt2.png");}
+    4% {background-image: url("CoffeeMakerPixelArt3.png");}
+    6% {background-image: url("CoffeeMakerPixelArt4.png");}
+    8% {background-image: url("CoffeeMakerPixelArt5.png");}
+    10% {background-image: url("CoffeeMakerPixelArt6.png");}
+    12% {background-image: url("CoffeeMakerPixelArt7.png");}
+    14% {background-image: url("CoffeeMakerPixelArt8.png");}
+    16% {background-image: url("CoffeeMakerPixelArt9.png");}
+    18% {background-image: url("CoffeeMakerPixelArt10.png");}
+    20% {background-image: url("CoffeeMakerPixelArt11.png");}
+    22% {background-image: url("CoffeeMakerPixelArt12.png");}
+    24% {background-image: url("CoffeeMakerPixelArt13.png");}
+    26% {background-image: url("CoffeeMakerPixelArt14.png");}
+    28% {background-image: url("CoffeeMakerPixelArt15.png");}
+    30% {background-image: url("CoffeeMakerPixelArt16.png");}
+    32% {background-image: url("CoffeeMakerPixelArt17.png");}
+    34% {background-image: url("CoffeeMakerPixelArt18.png");}
+    36% {background-image: url("CoffeeMakerPixelArt19.png");}
+    38% {background-image: url("CoffeeMakerPixelArt20.png");}
+    40% {background-image: url("CoffeeMakerPixelArt21.png");}
+    42% {background-image: url("CoffeeMakerPixelArt22.png");}
+    44% {background-image: url("CoffeeMakerPixelArt23.png");}
+    46% {background-image: url("CoffeeMakerPixelArt24.png");}
+    48% {background-image: url("CoffeeMakerPixelArt25.png");}
+    50% {background-image: url("CoffeeMakerPixelArt26.png");}
+    52% {background-image: url("CoffeeMakerPixelArt27.png");}
+    54% {background-image: url("CoffeeMakerPixelArt28.png");}
+    56% {background-image: url("CoffeeMakerPixelArt29.png");}
+    58% {background-image: url("CoffeeMakerPixelArt30.png");}
+    60% {background-image: url("CoffeeMakerPixelArt31.png");}
+    62% {background-image: url("CoffeeMakerPixelArt32.png");}
+    64% {background-image: url("CoffeeMakerPixelArt33.png");}
+    66% {background-image: url("CoffeeMakerPixelArt34.png");}
+    68% {background-image: url("CoffeeMakerPixelArt35.png");}
+    70% {background-image: url("CoffeeMakerPixelArt36.png");}
+    72% {background-image: url("CoffeeMakerPixelArt37.png");}
+    74% {background-image: url("CoffeeMakerPixelArt38.png");}
+    76% {background-image: url("CoffeeMakerPixelArt39.png");}
+    78% {background-image: url("CoffeeMakerPixelArt40.png");}
+    80% {background-image: url("CoffeeMakerPixelArt41.png");}
+    82% {background-image: url("CoffeeMakerPixelArt42.png");}
+    84% {background-image: url("CoffeeMakerPixelArt43.png");}
+    86% {background-image: url("CoffeeMakerPixelArt44.png");}
+    88% {background-image: url("CoffeeMakerPixelArt45.png");}
+    90% {background-image: url("CoffeeMakerPixelArt46.png");}
+    92% {background-image: url("CoffeeMakerPixelArt47.png");}
+    94% {background-image: url("CoffeeMakerPixelArt48.png");}
+    96% {background-image: url("CoffeeMakerPixelArt49.png");}
+    98% {background-image: url("CoffeeMakerPixelArt50.png");
+}
+}

@@ -36,17 +36,34 @@ while ((await getItem("board-text-" + i)).exists()) {
     i++;
 }
 
+let preValues = []
 setInterval(async function() {
-    await setDoc(doc(notesRef, "board-title"), {
-        elemt: "h3", "line number": "1", page: document.getElementById("board-title").textContent});
+    if (preValues[0] && preValues[0] != document.getElementById("board-title").textContent) {
+        await setDoc(doc(notesRef, "board-title"), {
+            elemt: "h3", "line number": "1", page: document.getElementById("board-title").textContent});
+    }
+
+    if (!preValues[0] || preValues[0] != document.getElementById("board-title").textContent) {
+        preValues[0] = document.getElementById("board-title").textContent;
+    }
 
     const allParas = document.getElementsByTagName("p")
     for (let i = 0; i < allParas.length; i++) {
+
+
+
         let elem = allParas[i].textContent
         if (elem) {
-            await setDoc(doc(notesRef, "board-text-" + i), {
-            elemt: "h3", "line number": "1", page: elem});
+            if (preValues[i+1] && preValues[i+1] != document.getElementById("board-text-" + i).textContent) {
+                await setDoc(doc(notesRef, "board-text-" + i), {
+                    elemt: "h3", "line number": "1", page: elem});
+            }
+
+            if (!preValues[i+1] || preValues[i+1] != document.getElementById("board-text-" + i).textContent) {
+                preValues[i+1] = document.getElementById("board-text-" + i).textContent;
+            }
         }
+
     }
 
 }, 10000)
