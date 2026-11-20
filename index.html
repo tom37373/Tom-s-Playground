@@ -4,21 +4,19 @@
     <title>Tom's Playground</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  
-    <div 
-    id="coffee" 
-    style="animation-play-state: paused;"
-    onclick="
-        let coffee = document.getElementById('coffee'); 
-        if (coffee.style.animationPlayState!='paused') {
-            coffee.style.animationPlayState='paused'
-        } else {
-            coffee.style.animationPlayState='';
-        }
-    ">
-</div>
-
   <body>
+    <div 
+        id="coffee" 
+        style="animation-play-state: paused;"
+        onclick="
+            let coffee = document.getElementById('coffee'); 
+            if (coffee.style.animationPlayState!='paused') {
+                coffee.style.animationPlayState='paused'
+            } else {
+                coffee.style.animationPlayState='';
+            }
+        ">
+    </div>
     <div contenteditable class="board">
 	  <h3 id="board-title"></h3>
       <p></p>
@@ -37,7 +35,6 @@
       <p></p>
       <p></p>
     </div>
-
-
+    <script src="initial.js"></script>
   </body>
 </html>
